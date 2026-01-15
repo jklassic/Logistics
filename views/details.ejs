@@ -1,0 +1,51 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    
+    <div class="detailsCover">
+        <div class="details">
+            <div class="partyCover">
+                <div class="party">
+                    <h4 id="sender">SENDER: <span class="text-danger" style="font-size: 17px; text-transform: uppercase;"><%= parcel.sender %></span></h4>
+                    <h4 id="receiver">RECEIVER: <span class="text-success" style="font-size: 17px; text-transform: uppercase;"><%= parcel.receiver %></span></h4>
+                </div>
+            </div>
+            
+
+            <div class="partyCover">
+                <div class="location">
+                    <h5 id="from">ORIGIN: <span class="text-danger" style="font-size: 17px; text-transform: uppercase;"><%= parcel.from %></span></h5>
+                    <p>Tracking Number: <%= parcel.trackingNumber %> </p>
+                    <h5 id="to">DESTINATION: <span class="text-success" style="font-size: 17px; text-transform: uppercase;"><%= parcel.to %></span></h5>
+                </div>
+            </div>
+
+            <div class="partyCover">
+                <div class="consignment">
+                    <p> <%= parcel.description %></p>
+                    <div>
+                        <img src="/parcel/<%= parcel._id %>/image" alt="" class="image">
+                    </div>
+                </div>
+                <div id="status">
+                    <%= parcel.statusLevel%>
+                    <!-- <h5 style="color: red;"><%= parcel.pending %></h5>
+                    <h5 style="color: orange;"><%= parcel.transit %></h5>
+                    <h5 style="color: yellowgreen;"><%= parcel.awaiting %></h5>
+                    <h5 style="color: green;"><%= parcel.delivered %></h5> -->
+                </div>
+            </div>
+
+            <div id="edit">
+                <button class="edit"> <a href="/parcel/edit/<%= parcel._id %>">EDIT</a></button>
+                <form action="/parcel/<%= parcel._id%>?_method=DELETE" method="POST">
+                    <button class="delete" style="background-color: red;">DELETE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

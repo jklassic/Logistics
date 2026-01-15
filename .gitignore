@@ -1,0 +1,4 @@
+node_modules/
+utils/
+public/CSS/bootstrap/
+.env

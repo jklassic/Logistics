@@ -1,0 +1,234 @@
+.hero {
+    background: linear-gradient(to right, rgba(0, 0, 0.2), rgba(255, 255, 255, 0.4)), url("../image/logistic.jpeg");
+    /* background-image: url("../image/logistic.jpeg"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.abtus {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: centerr;
+    margin: 2em 0;
+    padding: 0 5em;
+
+}
+
+
+
+.hero-text {
+    color: green;
+}
+
+.hero p{
+    margin: 1em 0 4em 0 ;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.shipment {
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+}
+
+.slide {
+    border-bottom: green 1px solid;
+    margin: 1em 0;
+}
+
+marquee {
+    font-size: large;
+    font-weight: bolder;
+    color: green;
+}
+
+marquee span {
+    margin-left: 30em;
+}
+
+#my_goods {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    width: 90%;
+}
+
+table, .track {
+    width: 70%;
+    margin: 1em 3em;
+}
+
+.d-flex button, #track button {
+    height: fit-content;
+}
+
+.track {
+    border: 1px solid black;
+    height: 30%;
+    text-align: center;
+
+}
+
+.track label {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    margin: 1em 0 2em 0;
+}
+
+#track {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.register_goods {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    margin: 0 auto;
+    padding: 1em;
+    width: 70%;
+    height: 80%;
+    border: 1px solid green;
+    border-radius: 1em;
+
+}
+
+input, textarea {
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+#form_btn, #edit_btn {
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    padding: 0.4em;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.para {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1em;
+    text-decoration: underline;
+    color: white;
+}
+
+.status1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 0;
+}
+
+.status2 {
+    background: none;
+    border: 1px solid white;
+    padding: 0.5em;
+}
+.detailsCover {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 4em;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 1px black solid;
+    border-radius: 0.5em;
+    width: 65%;
+    height: 65%;
+}
+
+.partyCover {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-bottom: solid 1px rgb(175, 174, 174);
+    margin-bottom: 1em;
+}
+
+.party, .location {
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.consignment {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    /* margin: 0 auto; */
+}
+
+.consignment p {
+    text-align: left;
+    width: 50%;
+    border-right: 1px solid black;
+}
+
+.consignment .image {
+    width: 80%;
+    height: 150px;
+}
+
+#edit {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0.5em;
+}
+
+.edit, .delete {
+    background-color: green;
+    color: #FFF;
+    /* border: 1px black solid; */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 6px 12px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: box-shadow 2s;
+    /* font-family: cursive; */
+}
+
+.edit a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.edit:hover, .delete:hover {
+    /* margin-top: 1em; */
+    box-shadow: 2px 2px 1px #777;
+    
+}
+

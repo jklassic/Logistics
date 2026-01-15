@@ -1,0 +1,32 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="slide">
+        <marquee behavior="" direction="">
+            <p>YOUR LOGISTICS PARTNER IN EVERY MOVE!  <span>YOUR LOGISTICS PARTNER IN EVERY MOVE!</span> </p>
+        </marquee>
+    </div>
+
+    <div>
+        <form action="/update/<%=parcel._id%>?_method=PUT" method="post" class="register_goods bg-success">
+            <label for="status" class="para">STATUS</label>
+            <div class="status1">
+                <select name="statusLevel" id="" class="mb-3 status2">
+                    <option value="" class="disabled">Select Level</option>
+                    <option value="PENDING" style="color: red;">PENDING</option>
+                    <option value="TRANSIT" style="color: orange;">IN TRANSIT</option>
+                    <option value="ARRIVED" style="color: yellowgreen;">ARRIVED</option>
+                    <option value="DELIVERED" style="color: green;">DELIVERED</option>
+                </select>
+            </div>
+            
+            <button type="submit" id="edit_btn" class="bg-success">SUBMIT</button>
+        </form>      
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

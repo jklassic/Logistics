@@ -1,0 +1,29 @@
+{
+  "name": "logistics",
+  "version": "1.0.0",
+  "description": "project on logistics firm",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.16.1",
+    "multer": "^2.0.1",
+    "node": "^22.17.0",
+    "nodemailer": "^7.0.12",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^3.1.11"
+  }
+}

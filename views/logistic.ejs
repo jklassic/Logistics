@@ -1,0 +1,41 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="slide">
+        <marquee behavior="" direction="">
+            <p>YOUR LOGISTICS PARTNER IN EVERY MOVE!  <span>YOUR LOGISTICS PARTNER IN EVERY MOVE!</span> </p>
+        </marquee>
+    </div>
+
+    <div id="my_goods">
+        <table class="table table-striped table-success table-hover">
+            <tr>
+                <th>TRACKING NO</th>
+                <th>SENDER</th>
+                <th>RECEIVER</th>
+                <th>FROM</th>
+                <th>TO</th>                
+                <th>STATUS</th>
+            </tr>
+            <% if(parcels.length > 0) { %>
+                <% parcels.forEach((parcel)=>{ %>
+                    <tr>
+                        <td><%= parcel.trackingNumber %></td>
+                        <td><%= parcel.sender %></td>
+                        <td><%=  parcel.receiver %></td>
+                        <td><%= parcel.from %></td>
+                        <td><%= parcel.to %></td>                        
+                        <td class="status">
+                           <p class="status" style="font-weight:bold; color:<%= statusColor[parcel.statusLevel] %>"> <%= parcel.statusLevel%> </p> 
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </table>
+    </div>
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
