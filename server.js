@@ -13,10 +13,24 @@ const upload = multer({ storage: storage });
 const cookieParser = require('cookie-parser');
 const path = require('path')
 const Parcel = require('./models/goods.js');
-const connectDB = require('./utils/connectDB.js')
 
+const database = process.env.MONGO_URI
 
-connectDB()
+let isConnected = false;
+
+async function connectDB() {
+    if (isConnected) return;
+
+    try {
+        await mongoose.connect(database);
+        isConnected = true;
+        console.log("Database server is connected");
+    } catch (err) {
+        console.error("MongoDB connection error", err);
+    }
+}
+
+connectDB();
 
 const app = express()
 const port = process.env.PORT || 8080;
@@ -239,6 +253,5 @@ app.delete('/parcel/:postid', async (req, res)=>{
 app.use((req, res)=>{
     res.render("404", {title: 'ERROR', q:""})
 })
-
 
 module.exports = app;
