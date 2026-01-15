@@ -9,7 +9,10 @@ const multer = require('multer');
 const nodemailer = require('nodemailer');
 const smtpTransport = require("nodemailer-smtp-transport")
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 5 * 1024 * 1024}
+});
 const cookieParser = require('cookie-parser');
 const path = require('path')
 const Parcel = require('./models/goods.js');
@@ -36,8 +39,9 @@ const app = express()
 const port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 app.use(cookieParser())
