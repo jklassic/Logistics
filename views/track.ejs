@@ -2,7 +2,7 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="hero">
-        <form class="track bg-success" role="search" action="/search" method="GET">
+        <form class="track bg-success" role="search" action="/myParcel" method="GET">
             <label for="track">TRACK MY PARCEL:</label>
             <div id="track">
                 <input class="form-control me-2" style="width: 70%;" type="search" name="q" placeholder="Search" value="<%= q ? q : '' %>" aria-label="Search"/>

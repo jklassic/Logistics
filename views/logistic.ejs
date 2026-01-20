@@ -17,6 +17,7 @@
                 <th>FROM</th>
                 <th>TO</th>                
                 <th>STATUS</th>
+                <th>VIEW</th>
             </tr>
             <% if(parcels.length > 0) { %>
                 <% parcels.forEach((parcel)=>{ %>
@@ -29,6 +30,7 @@
                         <td class="status">
                            <p class="status" style="font-weight:bold; color:<%= statusColor[parcel.statusLevel] %>"> <%= parcel.statusLevel%> </p> 
                         </td>
+                        <td><a href="/single/<%= parcel._id %>">VIEW</a></td>
                     </tr>
                 <% }) %>
             <% } %>

@@ -1,0 +1,60 @@
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="worker">
+        <div class="profile">
+            <div class="prof1">
+                <div id="pic">
+                    <img src="/staff/image/<%= type %>/<%= staff._id %>" alt="officer">
+                </div>
+                <div id="info">
+                    <div>
+                        <h3><%= staff.firstName %> <%= staff.secondName %></h3>
+                        <p>Logistics Officer</p>
+                    </div>
+                    <div class="info">
+                        <div>
+                            <p>Branch: <%= staff.branch %></p>
+                            <p class="bg-success">Status: Active</p>
+                        </div>
+                        <div>
+                            <p>Email: <%= staff.email %> </p>
+                            <p>Phone: <%= staff.phoneNo %></p>
+                            <p>Employee ID: <%= staff.workerID %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prof2">
+                <div class="info-card">
+                    <div class="card-header">
+                        Personal Information
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Full Name:</span>
+                        <span class="value"><%= staff.firstName %> <%= staff.secondName %></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Position:</span>
+                        <span class="value"> <%= staff.role %></span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="label">Branch:</span>
+                        <span class="value"><%= staff.branch %></span>
+                    </div>
+                </div>                
+
+            </div>
+
+        </div>
+        
+    </div>
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
