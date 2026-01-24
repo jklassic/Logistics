@@ -9,40 +9,56 @@
     </div>
 
     <div id="mainContent" class="">
-        <form action="/workers" method="post" enctype="multipart/form-data" class="register_goods">
+        <form action="/workersReg" method="post" enctype="multipart/form-data" class="register_goods">
+            <h4 style="margin: 0 auto; text-decoration: underline;">SIGN UP</h4>
+
+            <div>
+                <h3><%=messages%></h3>
+            </div>
+            
             <input type="text" name="firstName" placeholder="FIRST NAME" id="">
             <input type="text" name="secondName" placeholder="SECOND NAME" id="">
             <input type="text" name="email" placeholder="EMAIL OF WORKER" id="">
             <input type="text" name="phoneNo" placeholder="PHONE NO." id="">
-            <input type="text" name="branch" placeholder="BRANCH" id="">      
-            <input type="password" name="password" placeholder="*********" id="">
+            <input type="text" name="branch" placeholder="BRANCH" id="">  
+            <div class="password-wrapper">
+                <input type="password" name="password" placeholder="*********" id="password">
+                <span id="togglePassword" class="toggle-password">👁</span>
+            </div>    
             <input type="file" name="image" id="fileUpload">
             <button type="submit" id="form_btn" class="bg-success">SIGN UP</button>
         </form>
-        <p style="text-align: center;">Already a member? click <a href="" onclick="showLoginModal()">HERE!</a></p>
+        <p style="text-align: center;">Already a member? click <a href="/signin">HERE!</a></p>
               
     </div>
-
-    <%- include('./partials/signin.ejs') %>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
     <script>
-        function showLoginModal() {
-            event.preventDefault();
-            document.getElementById("loginModal").style.display = "block";
-            document.getElementById("mainContent").classList.add("blur");
-        }
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
 
-        function closeLoginModal() {
-            document.getElementById("loginModal").style.display = "none";
-            document.getElementById("mainContent").classList.remove("blur");
-        }
+        togglePassword.addEventListener('click', ()=> {
+            if (passwordInput.type === "password") {
+                password.type = 'text'
+            } else {
+                passwordInput.type = "password"
+            }
+        })
+        // function showLoginModal() {
+        //     event.preventDefault();
+        //     document.getElementById("loginModal").style.display = "block";
+        //     document.getElementById("mainContent").classList.add("blur");
+        // }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById("loginModal");
-            if(event.target === modal) {closeLoginModal()};
-        }
+        // function closeLoginModal() {
+        //     document.getElementById("loginModal").style.display = "none";
+        //     document.getElementById("mainContent").classList.remove("blur");
+        // }
+
+        // window.onclick = function(event) {
+        //     const modal = document.getElementById("loginModal");
+        //     if(event.target === modal) {closeLoginModal()};
+        // }
 
     </script>
 </body>

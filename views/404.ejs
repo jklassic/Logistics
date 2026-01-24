@@ -1,9 +1,19 @@
 <%- include('./partials/head.ejs') %>
+<style>
+    .notfound {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 4em 0;
+        width: 100%;
+        align-items: center;
+    }
+</style>
 <body>
     <%- include('./partials/nav.ejs') %>
 
     <div class="notfound content">
-        <h2 style="margin-bottom: 40px; ">OOPS, Page Not Found</h2>
+        <h2 style="margin-bottom: 40px; ">OOPS, Page Not Found!</h2>
         <p><h3 style="text-transform: capitalize; margin-bottom: 8px;"><a href="/">Go Back Home</a></h3></p>
     </div>    
     

@@ -34,6 +34,11 @@ const mgmtSchema = new schema(
         image:{
             data:Buffer,
             contentType:String
+        },
+
+        approved:{
+            type:Boolean,
+            default:true
         }
     },
     { timestamps: true}

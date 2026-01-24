@@ -16,7 +16,13 @@
                     <div class="info">
                         <div>
                             <p>Branch: <%= staff.branch %></p>
-                            <p class="bg-success">Status: Active</p>
+                            <p class="bg-success">
+                                Status: <% if (staff.approved) { %>
+                                <span class="status approved">Approved</span>
+                                <% } else { %>
+                                <span class="status pending">Pending</span>
+                                <% } %>
+                            </p>
                         </div>
                         <div>
                             <p>Email: <%= staff.email %> </p>
@@ -52,6 +58,20 @@
 
         </div>
         
+    </div>
+
+    <div class="action">
+        <form action="/admin/delete-worker/<%= staff._id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn bg-danger">DELETE</button>
+        </form>
+
+        <% if (!staff.approved) { %>
+        <form action="/admin/approve-worker/<%= staff._id %>?_method=PUT" method="POST">
+            <button type="submit" class="btn bg-success">APPROVE</button>
+        </form>
+        <% } else { %>
+        <span>—</span>
+        <% } %>
     </div>
    
     

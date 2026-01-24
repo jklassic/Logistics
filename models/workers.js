@@ -44,6 +44,11 @@ const workerSchema = new schema(
         image:{
             data:Buffer,
             contentType:String
+        },
+
+        approved:{
+            type:Boolean,
+            default:false
         }
     },
     {timestamps: true}

@@ -21,6 +21,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">CONTACT US</a>
                     </li>
+                   
+                    <li class="nav-item">
+                        <% if (currentUser) { %>
+                            <a href="/logout" style="color: white; text-decoration: none;">Logout</a>
+                        <% } %>
+                    </li>
+                    
                 </ul>
                 <form class="d-flex" role="search" action="/search" method="GET">
                     <input class="form-control me-2" type="search" name="q" placeholder="Search" value="<%= q ? q : '' %>" aria-label="Search"/>

@@ -1,11 +1,22 @@
 <%- include('./partials/head.ejs') %>
+<style>
+    @media only screen and (max-width: 480px) {
+        #track {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: max-content;
+    }
+    }
+</style>
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="hero">
         <form class="track bg-success" role="search" action="/myParcel" method="GET">
             <label for="track">TRACK MY PARCEL:</label>
             <div id="track">
-                <input class="form-control me-2" style="width: 70%;" type="search" name="q" placeholder="Search" value="<%= q ? q : '' %>" aria-label="Search"/>
+                <input class="form-control me-2" style="width: 70%;" type="search" name="q" placeholder="TRACKING ID" value="<%= q ? q : '' %>" aria-label="Search"/>
                 <button class="btn btn-outline-dark" type="submit">TRACK</button>
             </div>
             

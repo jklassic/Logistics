@@ -1,6 +1,11 @@
 <%- include('./partials/head.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
+
+    <% if (currentUser) { %>
+        Welcome <%= currentUser.email %>
+    <% } %>
+
     <div class="hero">
         <p class="hero-text">YOUR LOGISTICS PARTNER</p>
         <p class="text-bg-success">IN EVERY MOVE!</p>
@@ -11,8 +16,6 @@
             <a href="/track"> Track your parcel </a>
         </div>
     </section>
-
-    <%- include('./partials/signin.ejs') %>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
