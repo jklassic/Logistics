@@ -2,13 +2,17 @@
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <% if (currentUser) { %>
-        Welcome <%= currentUser.email %>
-    <% } %>
+    <p style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+         <% if (currentUser) { %>
+        Welcome <%= currentUser.firstName %>
+        <% } %>
+    </p>
+
+   
 
     <div class="hero">
-        <p class="hero-text">YOUR LOGISTICS PARTNER</p>
-        <p class="text-bg-success">IN EVERY MOVE!</p>
+        <p class="hero-text">Your Logistics Partner</p>
+        <p class="text-bg-success">In Every Move!</p>
     </div>
 
     <section class="shipment">

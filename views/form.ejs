@@ -10,22 +10,54 @@
 
     <div>
         <form action="/logistics" method="post" enctype="multipart/form-data" class="register_goods">
-            <input type="text" name="sender" placeholder="SENDER" id="">
-            <input type="text" name="senderEmail" placeholder="EMAIL" id="">
-            <input type="text" name="recipientEmail" placeholder="EMAIL OF RECIPIENT" id="">        
-            <input type="text" name="receiver" placeholder="RECEIVER" id="">
-            <input type="text" name="from" placeholder="FROM" id="">
-            <input type="text" name="to" placeholder="TO" id="">
-            <textarea name="description" placeholder="DESCRIPTION" id=""></textarea>
-            <label for="status">STATUS</label>
-            <div class="status1">
-                <select name="statusLevel" id="" class="mb-1">
-                    <option value="PENDING" style="color: red;">PENDING</option>
-                    <!-- <option value="TRANSIT" style="color: orange;">IN TRANSIT</option>
-                    <option value="ARRIVED" style="color: yellowgreen;">ARRIVED</option>
-                    <option value="DELIVERED" style="color: green;">DELIVERED</option> -->
-                </select>
+
+            <!-- Sender Details -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-card">
+                        <h5 class="section-title">Sender Information</h5>
+
+                        <input type="text" class="form-control mb-3" name="sender" placeholder="SENDER" id="">
+                        <input type="text" class="form-control mb-3" name="senderEmail" placeholder="EMAIL" id="">
+                        <input type="text" class="form-control mb-3" name="from" placeholder="FROM" id="">
+                    </div>
+                </div>
+
+                <!-- Receiver Details -->
+                <div class="col-md-6">
+                    <div class="form-card">
+                        <h5 class="section-title">Receiver Information</h5>
+
+                        <input type="text" class="form-control mb-3" name="receiver" placeholder="RECEIVER" id="">
+                        <input type="text" class="form-control mb-3" name="recipientEmail" placeholder="EMAIL OF RECIPIENT" id="">
+                        <input type="text" class="form-control mb-3" name="to" placeholder="TO" id="">
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Parcel Details -->
+            <div class="form-card mt-4">
+                <h5 class="section-title">Parcel Details</h5>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" name="weight" class="form-control mb-3" placeholder="Weight (kg)">
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="text" name="description" class="form-control mb-3" placeholder="DESCRIPTION">
+                        <!-- <textarea name="description" placeholder="DESCRIPTION" id=""></textarea> -->
+                    </div>
+
+                    <div class="col-md-4 status1">
+                        <select name="statusLevel" id="" class="mb-1">
+                            <option value="PENDING" style="color: red;">PENDING</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
             
             <input type="file" name="image" id="">
             <button type="submit" id="form_btn" class="bg-success">SUBMIT</button>

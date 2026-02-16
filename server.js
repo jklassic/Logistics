@@ -610,4 +610,8 @@ app.use((req, res)=>{
     res.render("404", {title: 'ERROR', q:""})
 })
 
+app.listen(port, ()=>{
+    console.log(`Server is running on port ${port}`)
+})
+
 module.exports = app;
