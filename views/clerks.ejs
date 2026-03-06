@@ -86,15 +86,15 @@
                 <th>APPROVAL</th>
                 <th>VIEW</th>
             </tr>
-            <% workers.forEach((worker)=>{ %>
+            <% pendingWorkers.forEach((pendingWorker)=>{ %>
             <tr>
-                <td><%= worker.workerID %></td>
-                <td><%= worker.firstName %></td>
-                <td><%= worker.secondName %></td>
-                <td><%= worker.email %></td>                        
-                <td><%= worker.role %></td>
+                <td><%= pendingWorker.workerID %></td>
+                <td><%= pendingWorker.firstName %></td>
+                <td><%= pendingWorker.secondName %></td>
+                <td><%= pendingWorker.email %></td>                        
+                <td><%= pendingWorker.role %></td>
                 <td>
-                    <% if (worker.approved) { %>
+                    <% if (pendingWorker.approved) { %>
                         <span> Approved </span>
                     <% } else { %>
                     <span> Pending </span>

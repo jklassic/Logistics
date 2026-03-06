@@ -1,4 +1,12 @@
 <%- include('./partials/head.ejs') %>
+
+    <style>
+        @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+
 <body>
     <%- include('./partials/nav.ejs') %>
 
@@ -8,29 +16,55 @@
         </marquee>
     </div>
 
-    <div id="mainContent" class="">
-        <form action="/workersReg" method="post" enctype="multipart/form-data" class="register_goods">
-            <h4 style="margin: 0 auto; text-decoration: underline;">SIGN UP</h4>
+    <div class="container-fluid vh-100" style="font-family: 'Poppins', sans-serif;">
+        <div class="row h-100">
 
-            <div>
-                <h3><%=messages%></h3>
+            <div class="col-lg-6 d-none d-lg-flex bg-success writeup">
+                <div class="text-white text-center m-auto">
+                    <h1 class="display-5 fw-bold">ABC Logistics Portal</h1>
+                    <p class="lead">Manage deliveries. Track parcels. Stay in control.</p>
+                </div>
             </div>
-            
-            <input type="text" name="firstName" placeholder="FIRST NAME" id="">
-            <input type="text" name="secondName" placeholder="SECOND NAME" id="">
-            <input type="text" name="email" placeholder="EMAIL OF WORKER" id="">
-            <input type="text" name="phoneNo" placeholder="PHONE NO." id="">
-            <input type="text" name="branch" placeholder="BRANCH" id="">  
-            <div class="password-wrapper">
-                <input type="password" name="password" placeholder="*********" id="password">
-                <span id="togglePassword" class="toggle-password">👁</span>
-            </div>    
-            <input type="file" name="image" id="fileUpload">
-            <button type="submit" id="form_btn" class="bg-success">SIGN UP</button>
-        </form>
-        <p style="text-align: center;">Already a member? click <a href="/signin">HERE!</a></p>
-              
+
+            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+
+                <div class="login-card" style="width: 100%;">
+                    <h3 class="text-center mb-4 fw-semibold">Welcome Back</h3>
+
+                    <form action="/workersReg" method="post" enctype="multipart/form-data" class="register_goods">
+                        <h4 style="margin: 0 auto; text-decoration: underline;">SIGN UP</h4>
+
+                        
+                        <div>
+                            <h5 style="text-align: center; margin: 1em 0;"><%=messages%></h5>
+                        </div>
+
+                        <input type="text" name="firstName" placeholder="FIRST NAME" id="">
+                        <input type="text" name="secondName" placeholder="SECOND NAME" id="">
+                        <input type="text" name="email" placeholder="EMAIL OF WORKER" id="">
+                        <input type="text" name="phoneNo" placeholder="PHONE NO." id="">
+                        <input type="text" name="branch" placeholder="BRANCH" id="">
+
+                        <div class="password-wrapper">
+                            <input type="password" name="password" placeholder="*********" id="password">
+                            <span id="togglePassword" class="toggle-password">👁</span>
+                        </div>
+                        <input type="file" name="image" id="fileUpload">
+
+                        <button type="submit" id="form_btn" class="bg-success">SIGN UP</button>
+                    </form>
+
+                    
+                    <p style="text-align: center; margin-top: 0.5em;">Already a member? click <a href="/signin">HERE!</a></p>
+                    
+                </div>
+            </div>
+
+        </div>
+    
     </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
     <script>
@@ -44,22 +78,6 @@
                 passwordInput.type = "password"
             }
         })
-        // function showLoginModal() {
-        //     event.preventDefault();
-        //     document.getElementById("loginModal").style.display = "block";
-        //     document.getElementById("mainContent").classList.add("blur");
-        // }
-
-        // function closeLoginModal() {
-        //     document.getElementById("loginModal").style.display = "none";
-        //     document.getElementById("mainContent").classList.remove("blur");
-        // }
-
-        // window.onclick = function(event) {
-        //     const modal = document.getElementById("loginModal");
-        //     if(event.target === modal) {closeLoginModal()};
-        // }
-
     </script>
 </body>
 </html>

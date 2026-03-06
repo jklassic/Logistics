@@ -98,8 +98,9 @@ app.get('/track', (req, res)=>{
 
 app.get('/clerks', isAuthenticated, isAdmin, async (req, res)=>{
     const mgmts = (await Mgmt.find()).reverse()
-    const workers = (await Worker.find()).reverse()
-    res.render('clerks', {title: 'CLERKS', workers, mgmts, q:""})
+    const workers = (await Worker.find({approved: true })).reverse()
+    const pendingWorkers = (await Worker.find({approved: false })).reverse()
+    res.render('clerks', {title: 'CLERKS', workers, mgmts, pendingWorkers, q:""})
 })
 
 app.get("/dashboard", isAuthenticated, isAdmin, async (req, res)=>{
@@ -124,7 +125,7 @@ app.get('/services', isAuthenticated, async (req, res)=>{
     res.render('logistic', {title: 'LOGISTICS', parcels, statusColor, q:""})
 })
 
-app.get('/form', isAuthenticated, (req, res)=>{
+app.get('/form', (req, res)=>{
     res.render('form', {title: 'FORM', q:""})
 })
 
@@ -318,7 +319,7 @@ app.post("/adminReg", upload.single('image'), async (req, res)=>{
             approved:true
         });
 
-    mgmt.adminID = mgmt._id.toString().slice(0, 6);
+    mgmt.adminID = `ABC-${mgmt._id.toString().slice(0, 6)}`;
 
     console.log(mgmt)
 
