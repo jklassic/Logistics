@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const schema = mongoose.Schema
-const reviewSchema = new schema(
+const testimonialSchema = new schema(
     {
         message:{
             type:String,
@@ -20,5 +20,5 @@ const reviewSchema = new schema(
     { timestamps: true}
 );
 
-const Review = mongoose.model('Review', reviewSchema)
-module.exports = Review
+const Testimonial = mongoose.model('Testimonial', testimonialSchema)
+module.exports = Testimonial

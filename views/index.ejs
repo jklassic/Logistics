@@ -149,18 +149,19 @@
             <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                 
                 <div class="carousel-inner">
+                    <% if(groupedTestimonials.length > 0) { %>
 
                     <% groupedTestimonials.forEach((group, index) => { %>
-                        <div class="carousel-item <%=index === 0 ? 'active" : '' %>" >
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %>" >
                             <div class="row g-4 justify-content-center">
                                 
                                 <% group.forEach((testimonial) => { %>
 
                                     <div class="col-md-4">
                                         <div class="testimonial-box p-4 h-100">
-                                            <p>" <% testimonial.message %> "</p>
-                                            <h6 class="fw-bold mt-3">- <% testimonial.name %></h6>
-                                            <small class="text-muted"> <% testimonial.occupation %></small>
+                                            <p>" <%= testimonial.message %> "</p>
+                                            <h6 class="fw-bold mt-3">- <%= testimonial.name %></h6>
+                                            <small class="text-muted"> <%= testimonial.occupation %></small>
                                         </div>
                                     </div>
 
@@ -168,7 +169,11 @@
 
                             </div>
                         </div>
-                    <% }) %>                    
+                    <% }) %>
+                                        
+                    <% } else { %>
+                        <p> No Reviews </p>
+                    <% } %>
 
                 </div>
 

@@ -21,6 +21,7 @@ const path = require('path');
 const Mgmt = require('./models/mgmt.js')
 const Worker = require('./models/workers.js')
 const Parcel = require('./models/goods.js');
+const Testimonial = require('./models/testimonial.js');
 
 const database = process.env.MONGO_URI
 let isConnected = false;
@@ -84,8 +85,22 @@ function isAdmin (req, res, next) { // this is for the admin
 }
 
 
-app.get('/', (req, res)=>{
-    res.render('index', {title: 'HOME', q:"", messages: req.flash('info')})
+app.get('/', async (req, res)=>{
+
+    try {
+        const testimonials = await Testimonial.find()
+        const chinkSize = 3;
+        const groupedTestimonials = []
+
+        for (let i = 0; i < testimonials.length; i += chunksize) {
+            groupedTestimonials.push(testimonials.slice(i, i + chunksize))
+        }
+
+        res.render('index', {title: 'HOME', groupedTestimonials, q:"", messages: req.flash('info')})
+    } catch (error) {
+        console.log(error)
+    }
+    
 })
 
 app.get('/abtus', (req, res)=>{
