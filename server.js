@@ -89,11 +89,11 @@ app.get('/', async (req, res)=>{
 
     try {
         const testimonials = await Testimonial.find()
-        const chinkSize = 3;
+        const chunkSize = 3;
         const groupedTestimonials = []
 
-        for (let i = 0; i < testimonials.length; i += chunksize) {
-            groupedTestimonials.push(testimonials.slice(i, i + chunksize))
+        for (let i = 0; i < testimonials.length; i += chunkSize) {
+            groupedTestimonials.push(testimonials.slice(i, i + chunkSize))
         }
 
         res.render('index', {title: 'HOME', groupedTestimonials, q:"", messages: req.flash('info')})
@@ -383,7 +383,7 @@ app.post('/submit-review', async (req, res)=>{
         const testimonial = new Testimonial({
             name:name,
             occupation,
-            ratin:rating,
+            rating:rating,
             comment:comment
         });
 

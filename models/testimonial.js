@@ -2,11 +2,6 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema
 const testimonialSchema = new schema(
     {
-        message:{
-            type:String,
-            required:true
-        },
-
         name:{
             type:String,
             required:true
@@ -16,7 +11,17 @@ const testimonialSchema = new schema(
             type:String,
             enum: ['Student', 'Unemployed', 'Self-employed', 'Employed'],
             required:true
-        }
+        },
+
+        rating:{
+            type:Number,
+            required:true
+        },
+
+        comment:{
+            type:String,
+            required:true
+        },
     },
     { timestamps: true}
 );
