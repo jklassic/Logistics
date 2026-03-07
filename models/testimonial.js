@@ -9,7 +9,7 @@ const testimonialSchema = new schema(
 
         occupation:{
             type:String,
-            enum: ['Student', 'Unemployed', 'Self-employed', 'Employed'],
+            enum: ['Student', 'Unemployed', 'Self-Employed', 'Employed'],
             required:true
         },
 
