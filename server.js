@@ -376,6 +376,27 @@ app.post("/adminReg", upload.single('image'), async (req, res)=>{
     }
 })
 
+app.post('/submit-review', async (req, res)=>{
+    try {
+        const {name, occupation, rating, comment} = req.body
+
+        const testimonial = new Testimonial({
+            name:name,
+            occupation,
+            ratin:rating,
+            comment:comment
+        });
+
+        await testimonial.save().then(()=>{
+            res.redirect('/')
+        })
+        
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
+
 app.post('/signin', async (req, res)=>{
     const {email, password} = req.body
     foundUser = await Worker.findOne({email:email})

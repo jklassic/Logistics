@@ -14,6 +14,7 @@ const testimonialSchema = new schema(
 
         occupation:{
             type:String,
+            enum: ['Student', 'Unemployed', 'Self-employed', 'Employed'],
             required:true
         }
     },
