@@ -140,7 +140,7 @@ app.get('/services', isAuthenticated, async (req, res)=>{
     res.render('logistic', {title: 'LOGISTICS', parcels, statusColor, q:""})
 })
 
-app.get('/form', (req, res)=>{
+app.get('/form', isAuthenticated, (req, res)=>{
     res.render('form', {title: 'FORM', q:""})
 })
 
